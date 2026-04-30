@@ -1,0 +1,7 @@
+site_name: LEDocs
+site_url: https://ledauphine.github.io/ledocs
+theme:
+  name: material
+markdown_extensions:
+  - attr_list
+  - md_in_html
