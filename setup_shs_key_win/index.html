@@ -1,0 +1,619 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://LEDauphine.github.io/LEDocs/setup_shs_key_win/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../setup_vscode/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>How to Create an SSH Key on Windows - LEDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-create-an-ssh-key-on-windows" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="LEDocs" class="md-header__button md-logo" aria-label="LEDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LEDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to Create an SSH Key on Windows
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="LEDocs" class="md-nav__button md-logo" aria-label="LEDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LEDocs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LEDocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Create an SSH Key on Windows
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Create an SSH Key on Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-ssh-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is an SSH Key?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-install-andor-open-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Install and/or Open "Terminal"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-check-for-existing-ssh-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Check for Existing SSH Keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-generate-a-new-ssh-key-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Generate a New SSH Key Pair
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-share-your-ssh-public-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Share your ssh public key
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-setup-your-ssh-access-without-vscode-command-line-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (5.) Setup your SSH access without VSCode (command-line access)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../setup_vscode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to setup your SSH access with VSCode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-ssh-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is an SSH Key?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-install-andor-open-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Install and/or Open "Terminal"
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-check-for-existing-ssh-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Check for Existing SSH Keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-generate-a-new-ssh-key-pair" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Generate a New SSH Key Pair
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-share-your-ssh-public-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Share your ssh public key
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-setup-your-ssh-access-without-vscode-command-line-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (5.) Setup your SSH access without VSCode (command-line access)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="how-to-create-an-ssh-key-on-windows">How to Create an SSH Key on Windows</h1>
+<p>This guide will help you create an SSH key pair on Windows 11. It should cover most of the same procedure on macOS and Linux also.</p>
+<h2 id="what-is-an-ssh-key">What is an SSH Key?</h2>
+<p>An SSH key is a secure way to log into your servers and services (like Github) without using a password. It consists of a public key (which you share) and a private key (which you keep secure).</p>
+<h2 id="1-install-andor-open-terminal">1. Install and/or Open "Terminal"</h2>
+<ul>
+<li>Look into your Windows menu for the application "Terminal"</li>
+</ul>
+<p><img alt="" src="../img/win_search_terminal.png" width="50%" /></p>
+<ul>
+<li>If it's not there, you can install it through "Microsoft Store"</li>
+</ul>
+<p><img alt="" src="../img/win_store_terminal.png" width="50%" /></p>
+<ul>
+<li>Open "Terminal", you should see something like this:</li>
+</ul>
+<p><img alt="" src="../img/win_term_empty.png" width="50%" /></p>
+<h2 id="2-check-for-existing-ssh-keys">2. Check for Existing SSH Keys</h2>
+<p>Before creating a new key, check if you already have one by typing this into your Terminal:</p>
+<pre><code>ls ~/.ssh/id_*
+</code></pre>
+<p><small><em>What is this? <code>ls</code> stands for <code>list</code>, <code>~</code> designates your Home directory, then <code>.ssh/id_*</code> point to any file starting with <code>id_</code> inside the <code>.ssh</code> folder inside your Home directory.</em></small></p>
+<p>If you already have SSH keys you should see something like this, and you can already jump to the last step of this tutorial:</p>
+<p><img alt="" src="../img/win_term_ls_keys.png" width="70%" /></p>
+<p>If nothing or an error shows (like shown below), it means you don't have any SSH key yet and that you can move on to the next step.</p>
+<p><img alt="" src="../img/win_ls_keys_error.png" width="70%" /></p>
+<h2 id="3-generate-a-new-ssh-key-pair">3. Generate a New SSH Key Pair</h2>
+<p>Type this command in your Terminal, then change the example email address with your own</p>
+<pre><code>ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;
+</code></pre>
+<p>When asked for where to save the file or passphrase, just press Enter without typing anything else.</p>
+<p><img alt="" src="../img/win_term_create_key.png" width="80%" /></p>
+<p>Congrats, you've just created a SSH Key pair.</p>
+<h2 id="4-share-your-ssh-public-key">4. Share your ssh <strong>public</strong> key</h2>
+<p>After running the command, you should see two files in the <code>C:\Users\YourUsername\.ssh</code> folder:</p>
+<ul>
+<li><code>id_ed25519</code> (private key, <strong>never share this!</strong>)</li>
+<li><code>id_ed25519.pub</code> (public key, share this)</li>
+</ul>
+<p>You can open <code>id_ed25519.pub</code> with "Notepad" or print its content using "Terminal" as shown below:</p>
+<p><img alt="" src="../img/win_term_print_ssh_pub.png" width="80%" /></p>
+<p>Copy the content of your key, which should look like something like this:</p>
+<pre><code>ssh-ed25519 AAABC3NzaC1lZDI1NTE5AAAAICyLt3giulrRAZF0N5iNY8IHYLWZyn6+loIU9ALDIh5H some.one@dauphine.psl.eu
+</code></pre>
+<p>And send it by email to you system/server administrator.</p>
+<p>From there, you can either <a href="../setup_vscode/">use VSCode to setup your SSH access</a> to a remote server, or follow the following section of this tutorial to do it without VSCode.</p>
+<p>If you plan to use VS Code, stop here and follow the <a href="../setup_vscode/">VS Code setup guide</a>—VS Code will handle the SSH configuration for you. Otherwise, continue below to set up command-line SSH access.</p>
+<h2 id="5-setup-your-ssh-access-without-vscode-command-line-access">(5.) Setup your SSH access without VSCode (command-line access)</h2>
+<p>You must have received a SSH configuration from your remote server administrator, which should look like this:</p>
+<pre><code>Host SomeServerNickname
+  HostName 123.45.6.789
+  User albert
+  Port 22
+  IdentityFile ~/.ssh/id_ed25519
+</code></pre>
+<p><small><em>What is this? <code>Host</code> is a simple name given to the server used has a shorthand, you can edit it as you please, <code>Hostname</code> is the IP address of the server, its location on the Internet,<code>User</code> is your username on the server, <code>Port</code> is something like the "door number" used to connect to the remote machine, lastly, <code>IdentityFile</code> is the path on your local machine to your SSH private key.</em></small></p>
+<p>Go to your Home directory, which should be in the drive <code>C:</code>, then <code>Users</code>, then your Windows username. You should see a <code>.ssh</code> folder. If not, toggle the option to see "Hidden items" in the "View" menu, as shown below:</p>
+<p><img alt="" src="../img/win_show_hidden_files.png" width="80%" /></p>
+<p>Open the <code>.ssh</code> folder. You should see the keys you've just created. If there is already a file named <code>config</code> open it with Notepad and append the SSH configuration sent by your server administrator.</p>
+<p>If not, open "Notepad" and paste the configuration text, then save the file to this folder.</p>
+<p><img alt="" src="../img/win_notepad_ssh.png" width="70%" /></p>
+<p>Watch out for Notepad's default behavior to append <code>.txt</code> to the file name, make sure the menu "Save as type" is set to "All files" and not "Text documents", and to surround the filename with double quotes, as in <code>"config"</code> (see picture below).</p>
+<p><img alt="" src="../img/win_ssh_config_save_as.png" width="80%" /></p>
+<p><strong>Connect to the server</strong></p>
+<p>You should be now able to connect to the remote server via "Terminal" by typing <code>ssh SomeServerNickname</code>. The first time you connect to a newly configured server, you're asked to acknowledge their "fingerprint", that is to "trust" the server", just type "yes". Then, <em>voilà</em>.</p>
+<p><img alt="" src="../img/win_ssh_term_first.png" width="80%" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
