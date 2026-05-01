@@ -1,14 +1,14 @@
 # Serve docs locally with live reload
 serve:
-    mkdocs serve --livereload
+    ./.venv/bin/mkdocs serve --livereload
 
 # Deploy docs to GitHub Pages
 deploy:
-    mkdocs gh-deploy --force
+    ./.venv/bin/mkdocs gh-deploy --force
 
 # Build the site without serving
 build:
-    mkdocs build
+    ./.venv/bin/mkdocs build
 
 # Clean build artifacts
 clean:
