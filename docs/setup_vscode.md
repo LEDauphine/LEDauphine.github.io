@@ -18,13 +18,13 @@ You don't necessarily need VSCode to connect to a remote server via SSH, but it 
 
 - Search for "AI Features" and toggle the option "Disable and hide built-in AI features..."
 
-![](img/vscode_disable_ai.png){: width="80%"}
+![](img/vscode_disable_ai.png){: width="100%"}
 
 - Close the settings window, and you're good to go.
 
 ## Installing SSH extension
 
-One of the main advantage of VSCode is that it has a vast ecosystem of "extensions", that is, plugins allowing users to tailor the editor to their specific needs and usecases.
+One of the main advantages of VSCode is that it has a vast ecosystem of "extensions", that is, plugins allowing users to tailor the editor to their specific needs and usecases.
 
 - On the left, click on the "extensions" button...
 
@@ -67,7 +67,7 @@ Host SomeServerNickname
 - Save and close the file.
 
 
-## Connect to a remote server
+## Connect to a remote server {#how-to-connect}
 
 Now that you edited your SSH configuration you should be able to connect to the remote server.
 
@@ -105,13 +105,17 @@ That should be it, you're now connected to the server from VSCode. Let's see how
 
 ![](img/vscode_trust_folder.png){: width="60%"}
 
-- You can now browser your remote home folder from within VS Code, right-click offers common file operations, like creating a folder.
+- You can now browse your remote home folder from within VS Code, right-click offers common file operations, like creating a folder.
 
 ![](img/vscode_create_folder.png){: width="60%"}
 
 - You can drag-and-drop some file on your local machine to your remote server
 
 ![](img/vscode_drag_and_drop.png){: width="80%"}
+
+- You can always check if the current VS Code window is the one connected to the remote server by looking at the bottom-left corner:
+
+![](img/vscode_check_if_remote.png){: width="60%"}
 
 *Voilà*.
 
