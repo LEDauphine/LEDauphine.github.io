@@ -8,22 +8,26 @@
       
       
       
+        <link rel="canonical" href="https://LEDauphine.github.io/LEDocs/setup_vscode_r/">
+      
+      
+        <link rel="prev" href="../setup_vscode/">
       
       
       
         
       
       
-      <link rel="icon" href="/LEDocs/assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>LEDocs</title>
+        <title>Working with R using VS Code - LEDocs</title>
       
     
     
-      <link rel="stylesheet" href="/LEDocs/assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -42,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("/LEDocs/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,6 +63,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#working-with-r-using-vs-code" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -71,7 +80,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/LEDocs/." title="LEDocs" class="md-header__button md-logo" aria-label="LEDocs" data-md-component="logo">
+    <a href=".." title="LEDocs" class="md-header__button md-logo" aria-label="LEDocs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -91,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Working with R using VS Code
             
           </span>
         </div>
@@ -169,7 +178,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/LEDocs/." title="LEDocs" class="md-nav__button md-logo" aria-label="LEDocs" data-md-component="logo">
+    <a href=".." title="LEDocs" class="md-nav__button md-logo" aria-label="LEDocs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -187,7 +196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/LEDocs/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   
@@ -214,7 +223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/LEDocs/setup_shs_key_win/" class="md-nav__link">
+      <a href="../setup_shs_key_win/" class="md-nav__link">
         
   
   
@@ -241,7 +250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/LEDocs/setup_vscode/" class="md-nav__link">
+      <a href="../setup_vscode/" class="md-nav__link">
         
   
   
@@ -265,10 +274,37 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/LEDocs/setup_vscode_r/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Working with R using VS Code
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -284,6 +320,59 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-r-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing the R extension
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -305,6 +394,49 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-r-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installing the R extension
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edit settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Basic usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -317,8 +449,92 @@
               
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="working-with-r-using-vs-code">Working with R using VS Code</h1>
+<p>This tutorial walks you through the setup of VS Code for working with R, eventually on a remote server.</p>
+<p>If you intend to work on a remote server, you have to perform these steps after opening the SSH connection within VS Code as explained <a href="../setup_vscode/#how-to-connect">here</a></p>
+<h2 id="installing-the-r-extension">Installing the R extension</h2>
+<p>One of the main advantages of VSCode is that it has a vast ecosystem of "extensions", that is, plugins allowing users to tailor the editor to their specific needs and usecases.</p>
+<ul>
+<li>On the left, click on the "extensions" button...</li>
+</ul>
+<p><img alt="" src="../img/vscode_search_ssh.png" width="70%" /></p>
+<ul>
+<li>... and search for "R" and install the "R" extension</li>
+</ul>
+<p><img alt="" src="../img/r_search_vscode_extension.png" width="60%" /></p>
+<ul>
+<li>If asked, "Trust" the publisher</li>
+</ul>
+<p><img alt="" src="../img/r_trust_publisher.png" width="60%" /></p>
+<h2 id="edit-settings">Edit settings</h2>
+<p>A couple edits in the settings will smooth your R workflow.</p>
+<ul>
+<li>Open settings through the menu: File &gt; Preferences &gt; Settings</li>
+</ul>
+<p><img alt="" src="../img/vscode_find_settings.png" width="70%" /></p>
+<ul>
+<li>Search for "httpgd" and toggle the option "R &gt; Plot: Use Httpgd"</li>
+</ul>
+<p><img alt="" src="../img/r_httpgd.png" width="90%" /></p>
+<ul>
+<li>If the server is a Mac and Radian (a better R console) is installed, search for "rterm" and edit the option "R &gt; Rterm: Mac" with the following path: <code>/opt/homebrew/bin/radian</code></li>
+</ul>
+<p><img alt="" src="../img/r_rterm_to_radian.png" width="90%" /></p>
+<ul>
+<li>Close the "Settings" window and you're good to go.</li>
+</ul>
+<h2 id="basic-usage">Basic usage</h2>
+<ul>
+<li>With VS code connected to your remote server, you can click on the files icon (1) to toggle the file explorer pane, click on "Open folder" (2) and select the default, your remote home folder (3).</li>
+</ul>
+<p><img alt="" src="../img/vscode_explore_remote.png" width="100%" /></p>
+<ul>
+<li>If asked, tell VS Code to trust this folder</li>
+</ul>
+<p><img alt="" src="../img/vscode_trust_folder.png" width="60%" /></p>
+<ul>
+<li>Let's create a folder named "some_R_project" by right-clicking inside the explorer pane</li>
+</ul>
+<p><img alt="" src="../img/vscode_create_folder.png" width="60%" /></p>
+<ul>
+<li>Right-click on the folder and create now a new file named "some_R_script.R", the ".R" at the end is important, it's what makes VS Code consider the file as an R script.</li>
+</ul>
+<p><img alt="" src="../img/r_create_new_file.png" width="70%" /></p>
+<ul>
+<li>Add some simple code to test printing in the console as well as plotting, for instance:</li>
+</ul>
+<pre><code class="language-R">print(&quot;Hello&quot;)
+
+x &lt;- 1:10
+y &lt;- x^2
+plot(x, y)
+</code></pre>
+<ul>
+<li>Run the script by clicking the "Play" icon</li>
+</ul>
+<p><img alt="" src="../img/r_edit_run_script.png" width="80%" /></p>
+<ul>
+<li><em>Voilà</em>, you should have the console printing "Hello" and a pane showing the plot. Click on the "R" icon on the left (see below) to toggle your "Workspace" with your variables and some other R features.</li>
+</ul>
+<p><img alt="" src="../img/r_bench.png" width="100%" /></p>
+<p>There are many other options and features available, feel free to explore.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -355,10 +571,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "/LEDocs/", "features": [], "search": "/LEDocs/assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/LEDocs/assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
