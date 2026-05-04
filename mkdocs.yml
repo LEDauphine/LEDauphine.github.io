@@ -1,5 +1,5 @@
 site_name: LEDocs
-site_url: https://LEDauphine.github.io/LEDocs
+site_url: https://LEDauphine.github.io/
 theme:
   name: material
 markdown_extensions:
